@@ -147,12 +147,16 @@
     }
     .project-intro__scale strong { color: var(--color-accent); }
     .project-intro__visuals {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(0, .85fr);
+      align-items: stretch;
+      gap: 12px;
       margin-top: 20px;
     }
     .visual-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
       border: 1px solid var(--color-border);
       border-radius: 6px; overflow: hidden; background: #fafbfc;
     }
@@ -161,18 +165,20 @@
       color: var(--color-sub); padding: 12px 14px 8px;
     }
     .visual-card__img {
-      width: 100%; max-height: 260px;
+      display: block; width: 100%; max-height: 240px;
       object-fit: contain; padding: 0 14px 14px; background: #fafbfc;
     }
     .visual-card--architecture .visual-card__img {
-      max-height: none;
+      max-height: 240px;
+      margin-top: auto;
+      margin-bottom: auto;
     }
     .visual-card--analytics {
-      width: min(100%, 590px);
-      align-self: center;
+      width: auto;
+      align-self: stretch;
     }
     .visual-card__img--analytics {
-      max-height: none;
+      max-height: 240px;
       padding-bottom: 8px;
     }
     .visual-card__caption {
